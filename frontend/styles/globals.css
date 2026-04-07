@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root[data-theme="light"] {
+  --bg-primary: #f7f5f0;
+  --bg-secondary: #fffaf0;
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --text-primary: #16120b;
+  --text-secondary: #5a513f;
+  --text-muted: #7a6f5c;
+  --accent-primary: #d97706;
+  --accent-secondary: #ea580c;
+  --border-color: rgba(48, 33, 14, 0.12);
+  --shadow-color: rgba(15, 23, 42, 0.08);
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --footer-bg: rgba(255, 248, 235, 0.92);
+  --btn-primary-bg: #d97706;
+  --btn-primary-text: #ffffff;
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --input-border: rgba(48, 33, 14, 0.14);
+  --badge-bg: rgba(217, 119, 6, 0.12);
+  --price-color: #b45309;
+  --sale-color: #dc2626;
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #030406;
+  --bg-secondary: #080b12;
+  --bg-card: rgba(15, 17, 26, 0.55);
+  --text-primary: #ffffff;
+  --text-secondary: #c7c7d1;
+  --text-muted: #8a8a98;
+  --accent-primary: #f59e0b;
+  --accent-secondary: #f97316;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --nav-bg: rgba(9, 10, 17, 0.7);
+  --footer-bg: rgba(0, 0, 0, 0.25);
+  --btn-primary-bg: #f59e0b;
+  --btn-primary-text: #050505;
+  --input-bg: rgba(255, 255, 255, 0.04);
+  --input-border: rgba(255, 255, 255, 0.08);
+  --badge-bg: rgba(245, 158, 11, 0.15);
+  --price-color: #fbbf24;
+  --sale-color: #f87171;
+}
+
+html, body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Outfit", sans-serif;
+}
+
+* {
+  border-color: var(--border-color);
+}
+
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bg-mesh {
+  background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(at 0% 0%, hsla(45, 100%, 18%, 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(30, 100%, 18%, 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(45, 100%, 18%, 0.1) 0, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(30, 100%, 18%, 0.1) 0, transparent 50%);
+}
+
+input, textarea, select {
+  color: var(--text-primary);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #facc15 0%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
