@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ProductFilter from "@/components/store/ProductFilter";
 import ProductCard from "@/components/store/ProductCard";
 import { ProductsResponse, apiFetch } from "@/lib/api";
@@ -25,7 +26,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
         <p className="mt-3 max-w-2xl text-zinc-400">Search, sort, and explore the current live products synced from the backend catalog.</p>
       </div>
       <div className="grid gap-6 md:grid-cols-[280px_1fr]">
-        <ProductFilter />
+        <Suspense fallback={<div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm text-zinc-400">Loading filters...</div>}><ProductFilter /></Suspense>
         <div className="space-y-5">
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm text-zinc-400">
             <span>{data.pagination.total} products found</span>
