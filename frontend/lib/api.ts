@@ -47,6 +47,7 @@ export interface ProductReview {
 export interface Product {
   id: string;
   slug: string;
+  sku?: string | null;
   nameEn: string;
   nameAr: string;
   descriptionEn: string;
