@@ -1,16 +1,5 @@
-# mezo reference
+# app mezo
 
-**المسار:** `frontend/app`
+This is the Next.js App Router root. The homepage (`/`) is defined in `app/page.tsx` on purpose.
 
-## وظيفة هذا المكان
-مسارات App Router في Next.js. هنا صفحات المتجر، auth، الأدمن، وبعض API routes الخاصة بالفرونت.
-
-## المحتويات
-- **مجلد `(auth)`**: مجموعة مسارات التسجيل والدخول. الغرض منها فصل صفحات المصادقة عن باقي المتجر.
-- **مجلد `(store)`**: مجموعة صفحات الواجهة العامة للمتجر: الرئيسية، الأقسام، المنتجات، السلة، الشيك أوت، وغيرها.
-- **مجلد `admin`**: منطقة لوحة الإدارة. تحتوي layout خاص وصفحات الإدارة المرتبطة بالباك إند الإداري.
-- **مجلد `api`**: API routes خاصة بالفرونت/Next.js وليست Express backend. تستخدم هنا للمصادقة والشات.
-- **ملف `layout.tsx`**: الـ root layout العام للواجهة كلها. هنا يتم تركيب providers والثيم والأنماط العامة.
-
-## كيف أتعامل معه لاحقًا
-استخدم هذا الملف كمرجع سريع قبل التعديل. لو ستغير منطقًا هنا، راجع الملفات المرتبطة المذكورة أعلاه حتى لا يحدث كسر في جزء آخر من المشروع.
+Why: Vercel/Next.js can fail packaging a root route that lives only inside a route group like `app/(store)/page.tsx`, with a missing `page_client-reference-manifest.js` error. Keeping the homepage in `app/page.tsx` avoids that deployment issue.
