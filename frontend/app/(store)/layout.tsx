@@ -2,10 +2,11 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import Starfield from "@/components/effects/Starfield";
 import ChatWidget from "@/components/chat/ChatWidget";
+import AuthSessionProvider from "@/components/providers/AuthSessionProvider";
 
 export default function StoreLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <AuthSessionProvider>
       <Starfield />
       <div className="relative min-h-screen bg-mesh">
         <Navbar />
@@ -15,6 +16,6 @@ export default function StoreLayout({ children }: { children: React.ReactNode })
         <Footer />
         <ChatWidget />
       </div>
-    </>
+    </AuthSessionProvider>
   );
 }
