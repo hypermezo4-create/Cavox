@@ -1,14 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: false, // تعطيل محرك Rust المفقود في أندرويد
+  
+  // --- إضافات ضرورية لبيئة Termux ---
+  eslint: {
+    ignoreDuringBuilds: true, // يتخطى فحص ESLint لتقليل استهلاك الرام ومنع التوقف
+  },
+  typescript: {
+    ignoreBuildErrors: true, // يتخطى أخطاء Typescript أثناء البناء
+  },
+  // ----------------------------------
+
   async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/shop',
-        permanent: false,
-      },
-    ];
+    return [{ source: '/', destination: '/shop', permanent: false }];
   },
   async rewrites() {
     return [

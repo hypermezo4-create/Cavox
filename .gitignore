@@ -23,3 +23,9 @@ backend/public/uploads/*
 # editor/system
 .DS_Store
 Thumbs.db
+.npm-cache/
+node_modules/
+.vercel/
+.pnpm-store/
+node_modules/
+.pnpm-cache/
