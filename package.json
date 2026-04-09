@@ -14,5 +14,10 @@
     "prisma:generate": "npm --prefix backend run prisma:generate",
     "prisma:seed": "npm --prefix backend run prisma:seed",
     "vercel:check": "echo \"Root for Vercel Services is ready\""
+  },
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
